@@ -71,18 +71,30 @@ const json = `
         "discordlink": "https://discord.gg/invitelink",
         "submits": {
             "record": "https://forms.gle/link",
-            "demon": "https://forms.gle/link"
+            "level": "https://forms.gle/link"
         }
     }
 }
 `;
 
-
-let maxScroll = 500; // increment this if you wanna scroll more on the website
+let maxXScroll = 0;
+let maxYScroll = 500; // increment this if you wanna scroll more on the website
 const jsonData = JSON.parse(json);
 const levels = jsonData.levels;
 const levelsContainer = document.getElementById("levels-container");
 const levelselector = document.getElementById("level-selector");
+
+function recordForm() {
+    window.location.href = jsonData.settings.submits.record;
+}
+
+function levelForm() {
+    window.location.href = jsonData.settings.submits.level;
+}
+
+function openDiscord() {
+    window.location.href = jsonData.settings.discordlink;
+}
 
 Object.entries(levels).forEach(([level, details]) => {
     // level details
@@ -169,25 +181,35 @@ Object.entries(levels).forEach(([level, details]) => {
 
 const settings = jsonData.settings;
 const topbar = document.getElementById('topbar');
-
-const discord = document.createElement('a');
-discord.textContent = "Discord"
-topbar.appendChild(discord);
+topbar.style.width = window.screen.width
 
 const submit = document.createElement('a');
 submit.textContent = "Submit Menu"
 topbar.appendChild(submit);
 
-selection = document.createElement('div');
-selection.style.display = 'none';
-selection.style.position = 'absolute';
+const selection = document.getElementById("selection");
+let viewselection = false;
+
+if (viewselection) {
+    selection.style.display = 'block';
+} else {
+    selection.style.display = 'none';
+}
 
 submit.addEventListener('click', () => {
-    selection.style.display = 'block';
+    viewselection = !viewselection;
+    
+    if (viewselection) {
+        selection.style.display = 'block';
+    } else {
+        selection.style.display = 'none';
+    }
 });
 
 document.addEventListener('scroll', function() {
-    if (window.scrollY > maxScroll) {
-        window.scrollTo(0, maxScroll);
+    if (window.scrollY > maxYScroll) {
+        window.scrollTo(0, maxYScroll);
+    } else if (window.scrollX > maxXScroll) {
+        window.scrollTo(maxXScroll, window.scrollY)
     }
 });
