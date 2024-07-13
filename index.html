@@ -12,7 +12,9 @@
 </head>
 
 <body>
-    <div id="topbar">hi</div>
+    <div id="topbar">
+        <a onclick="openDiscord()" id="discordlink">Discord</a>
+    </div>
     <div id="levels-misc">
         <div id="level-selector">
             <h1>TBL | The Bad List</h1>
@@ -22,8 +24,9 @@
         </div>
     </div>
     <div id="selection">
-        <a>Record</a> <a>Level</a>
+        <a onclick="recordForm()" id="submitrecord">Record</a> <a onclick="levelForm()" id="submitlevel">Level</a>
     </div>
     <script src="main.js"></script>
+    <script src="screenhandler.js"></script>
 </body>
 </html>
