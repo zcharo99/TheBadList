@@ -1,15 +1,25 @@
 html {
     font-family: "Lato";
 }
-#top-bar {
-    padding: 20px;
-    width: 100vh;
-    height: 10vh;
+#topbar {
+    padding: 10px;
+    padding-top: 16px;
+    height: 3vh;
     background-color: navajowhite;
+    margin: 10px;
+    border-radius: 12px;
+}
+#topbar a {
+    padding: 10px;
+    background-color: white;
+    color: navajowhite;
+    font-weight: bolder;
+    border-radius: 8px;
 }
 body {
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 #levels-misc {
     display: flex;
@@ -45,4 +55,27 @@ body {
     border-radius: 15px;
     background-color: whitesmoke;
     padding: 20px;
+}
+#selection {
+    display: none;
+    position: absolute;
+    transform: translate(100px, 50px);
+    background: darkblue;
+    color: white;
+    padding: 14px 10px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+#selection a {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    padding: 5px;
+    background-color: white;
+    color: darkblue;
+    font-weight: bolder;
+}
+#submitrecord {
+    margin-right: 8px;
 }
