@@ -78,3 +78,19 @@ body {
 #submitrecord {
     margin-right: 8px;
 }
+#debugdiv {
+    position: absolute;
+    display: none;
+    text-align: center;
+    transform: translate(10vh, 40vh);
+    background: darkblue;
+    padding: 8px 15px;
+    border-radius: 12px;
+    color: white;
+}
+#debugdiv h1 {
+    border-radius: 8px;
+    background-color: white;
+    color: darkblue;
+    padding: 5px;
+}
