@@ -1,7 +1,7 @@
 const levelSelector = document.getElementById('level-selector');
 let levelSelectorEnabled = false;
 
-if (window.screen.width < 1000) {
+if (window.screen.width < window.screen.height) {
     levelSelector.style.display = 'none';
     levelSelector.style.position = 'absolute';
     
