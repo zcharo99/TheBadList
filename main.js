@@ -77,12 +77,12 @@ const json = `
 }
 `;
 
-let maxXScroll = 0;
 let maxYScroll = 500; // increment this if you wanna scroll more on the website
 const jsonData = JSON.parse(json);
 const levels = jsonData.levels;
 const levelsContainer = document.getElementById("levels-container");
 const levelselector = document.getElementById("level-selector");
+levelselector.style.minHeight = '500vh';
 
 function recordForm() {
     window.location.href = jsonData.settings.submits.record;
@@ -209,7 +209,5 @@ submit.addEventListener('click', () => {
 document.addEventListener('scroll', function() {
     if (window.scrollY > maxYScroll) {
         window.scrollTo(0, maxYScroll);
-    } else if (window.scrollX > maxXScroll) {
-        window.scrollTo(maxXScroll, window.scrollY)
     }
 });
